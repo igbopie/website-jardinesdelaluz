@@ -38,6 +38,11 @@ export default {
     dest: 'build/resources'
   },
 
+  cname: {
+    src: ['app/CNAME'],
+    dest: 'build'
+  },
+
   assetExtensions: [
     'js',
     'css',
