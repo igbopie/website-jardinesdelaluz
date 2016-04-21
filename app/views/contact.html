@@ -2,42 +2,42 @@
     <div class="span12">
 
         <h3>Contacte con nosotros</h3>
-        <div ng-show="sent">
+        <div ng-show="contact.sent">
             <div class="alert alert-success">
-                <strong>Su peticiÛn ha sido enviada,</strong> en breve recibir· una respuesta.
+                <strong>Su petici&oacute;n ha sido enviada,</strong> en breve recibir&aacute; una respuesta.
             </div>
         </div>
-        <div ng-hide="sent">
-            <h5>InformaciÛn de contacto</h5>
-            <div ng-show="error">
+        <div ng-hide="contact.sent">
+            <h5>Informaci&oacute;n de contacto</h5>
+            <div ng-show="contact.error">
                 <div class="alert alert-error">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
                     <strong>Ha ocurrido un error,</strong> por favor intentelo de nuevo.
                 </div>
             </div>
-            <form class="form-horizontal" action="" method="post">
+            <form class="form-horizontal" ng-submit="contact.send()">
                 <div class="control-group">
                     <label class="control-label" for="inputName">Nombre*</label>
                     <div class="controls">
-                        <input type="text" name="name" id="inputName" placeholder="Nombre" required>
+                        <input type="text" name="name" id="inputName" placeholder="Nombre" required ng-model="contact.name">
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="inputEmail">Correo electrÛnico*</label>
+                    <label class="control-label" for="inputEmail">Correo electr&oacute;nico*</label>
                     <div class="controls">
-                        <input type="email" name="email" id="inputEmail" placeholder="Email" required>
+                        <input type="email" name="email" id="inputEmail" placeholder="Email" required ng-model="contact.email">
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="inputPhone">TelÈfono*</label>
+                    <label class="control-label" for="inputPhone">Tel&eacute;fono*</label>
                     <div class="controls">
-                        <input type="text" name="phone" id="inputPhone" placeholder="TelÈfono" required>
+                        <input type="text" name="phone" id="inputPhone" placeholder="Tel&eacute;fono" required ng-model="contact.phone">
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="inputComments">Comentarios</label>
                     <div class="controls">
-                        <textarea id="inputComments" name="comments" placeholder="Comentarios" rows="10" class="input-xxlarge"></textarea>
+                        <textarea id="inputComments" name="comments" placeholder="Comentarios" rows="10" class="input-xxlarge"  ng-model="contact.comments"></textarea>
                     </div>
                 </div>
                 <button class="btn btn-large btn-success pull-right">Enviar</button>
