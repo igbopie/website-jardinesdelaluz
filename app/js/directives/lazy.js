@@ -7,6 +7,7 @@ function LazyDirective() {
             element.lazyload({
               effect: 'fadeIn',
               effectspeed: 500,
+              threshold : 500,
               'skip_invisible': false
             });
       });
